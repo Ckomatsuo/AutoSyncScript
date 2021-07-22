@@ -12,7 +12,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-NobyDa-Script
+    types: sync-Aaron-lv-Script
 jobs:
   repo-sync:
     env:
@@ -28,7 +28,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://ghproxy.com/https://github.com/Aaron-lv/sync.gi"
+          source_repo: "https://github.com/Aaron-lv/sync.git"
           source_branch: "jd_scripts"
           destination_branch: "Aaron-lv"
           github_token: ${{ secrets.PAT }}
