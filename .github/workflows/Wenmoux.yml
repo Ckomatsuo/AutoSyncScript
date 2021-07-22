@@ -10,7 +10,7 @@ on:
 jobs:
   repo-sync:
     env:
-      PAT: ${{ secrets.PAT }} 
+      PAT: ${{ secrets.PAT }}
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
@@ -23,6 +23,6 @@ jobs:
         if: env.PAT
         with:
           source_repo: "https://github.com/Wenmoux/scripts.git"
-          source_branch: "master"
+          source_branch: "wen"
           destination_branch: "Wenmoux"
           github_token: ${{ secrets.PAT }}
