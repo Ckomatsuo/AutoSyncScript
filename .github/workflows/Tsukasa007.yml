@@ -1,10 +1,10 @@
-##  Aaron-lv 新仓库自动定时同步代码 ，教程公众号文章讲过了，不废话了，地址https://mp.weixin.qq.com/s/fcI4vQHD8TNajvTML9g3AA
+##  Tsukasa007 新仓库自动定时同步代码 ，教程公众号文章讲过了，不废话了，地址https://mp.weixin.qq.com/s/fcI4vQHD8TNajvTML9g3AA
 
 ## 每隔3小时拉取一次作者脚本到自己仓库的分支
 
 
 
-name: Aaron-lv-sync
+name: Tsukasa007-sync
 on:
   schedule:
     - cron: '6 */3 * * *'
@@ -12,7 +12,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-Aaron-lv-Script
+    types: sync-Tsukasa007-Script
 jobs:
   repo-sync:
     env:
@@ -24,11 +24,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync Aaron-lv-Script
+      - name: sync Tsukasa007-Script
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/Aaron-lv/sync.git"
-          source_branch: "jd_scripts"
-          destination_branch: "Aaron-lv"
+          source_repo: "https://github.com/Tsukasa007/my_script.git"
+          source_branch: "master"
+          destination_branch: "Tsukasa007"
           github_token: ${{ secrets.PAT }}
